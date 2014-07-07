@@ -1,4 +1,12 @@
 Template.formEdit.events
+  'keyup #header input[name="name"]': (e) ->
+    formId = this._id
+
+    # Update form with new name
+    Forms.update formId, {$set: {name: $(e.target).val()}}, (error) ->
+      if error
+        alert(error.reason)
+
   'click .add-entry': (e) ->
     e.preventDefault()
 

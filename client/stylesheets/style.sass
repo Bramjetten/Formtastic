@@ -1,3 +1,4 @@
+@import configuration
 @import packages/bourbon/bourbon
 @import packages/neat/neat
 @import fonts
@@ -8,6 +9,7 @@ body
 
 .container
   @include outer-container
+  @include pad
 
 // Header
 #header
@@ -20,6 +22,18 @@ body
     font-weight: 300
     text-align: center
     margin: 100px 0
+
+  input
+    background: none
+    border: none
+    color: #fff
+    font-size: 52px
+    font-weight: 300
+    margin: 72px 0
+    line-height: 68px
+    outline: none
+    text-align: center
+    width: 100%
 
 // Create form
 .form-entries
@@ -45,9 +59,8 @@ form.entry-form:last-child .control-group-divider
   border: none
 
 .control-group
-  padding: 10px 0
-
   @include outer-container
+  @include pad(10px default)
 
   .delete-entry
     color: #c7c7c7

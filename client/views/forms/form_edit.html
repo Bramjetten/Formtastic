@@ -1,5 +1,11 @@
 <template name="formEdit">
 
+  <div id="header">
+    <div class="container">
+      <input type="text" name="name" placeholder="Titel" value="{{name}}" />
+    </div>
+  </div>
+
   <div class="form-entries">
     {{#each entries}}
       {{> entryForm}}

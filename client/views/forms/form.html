@@ -1,7 +1,15 @@
 <template name="form">
 
-  {{#each entries}}
-    {{> entry}}
-  {{/each}}
+  <div id="header">
+    <div class="container">
+      <h1>{{name}}</h1>
+    </div>
+  </div>
+
+  <div class="form-entries">
+    {{#each entries}}
+      {{> entry}}
+    {{/each}}
+  </div>
 
 </template>

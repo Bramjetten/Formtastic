@@ -1,16 +1,22 @@
 @charset "UTF-8";
 
-@font-face {
-  font-family: "formulierapp";
-  src:url("/fonts/formulierapp.eot");
-  src:url("/fonts/formulierapp.eot?#iefix") format("embedded-opentype"),
-    url("/fonts/formulierapp.woff") format("woff"),
-    url("/fonts/formulierapp.ttf") format("truetype"),
-    url("/fonts/formulierapp.svg#formulierapp") format("svg");
-  font-weight: normal;
-  font-style: normal;
+@import "mixins";
 
-}
+@include font-face("formulierapp", "/fonts/formulierapp");
+
+@include font-face("Proxima Nova", "/fonts/proximanova-light-webfont", 300);
+@include font-face("Proxima Nova", "/fonts/proximanova-lightitalic-webfont", 300, italic);
+
+@include font-face("Proxima Nova", "/fonts/proximanova-regular-webfont");
+@include font-face("Proxima Nova", "/fonts/proximanova-regularitalic-webfont", normal, italic);
+
+@include font-face("Proxima Nova", "/fonts/proximanova-semibold-webfont", 600);
+@include font-face("Proxima Nova", "/fonts/proximanova-semibolditalic-webfont", 600, italic);
+
+@include font-face("Proxima Nova", "/fonts/proximanova-bold-webfont", bold);
+@include font-face("Proxima Nova", "/fonts/proximanova-boldit-webfont", bold, italic);
+
+@include font-face("Proxima Nova", "/fonts/proximanova-extrabold-webfont", 900);
 
 [data-icon]:before {
   font-family: "formulierapp" !important;
