@@ -1,0 +1,64 @@
+@import packages/bourbon/bourbon
+@import packages/neat/neat
+
+body
+  background: #f5f5f5
+  font-family: "Proxima Nova"
+
+.container
+  @include outer-container
+
+// Header
+#header
+  background: url(/images/header.jpg)
+  color: #fff
+  min-height: 100px
+
+  h1
+    font-size: 52px
+    font-weight: 300
+    text-align: center
+    margin: 100px 0
+
+// Create form
+#form_create_form
+  padding-top: 20px
+
+.control-group-divider
+  border-bottom: 1px solid #e9e9e9
+
+.control-group
+  padding: 10px 0
+
+  @include outer-container
+
+  .control-label
+    @include span-columns(5)
+
+  .control-input
+    @include span-columns(7)
+
+  .control-label-textarea
+    color: #666
+    font-size: 16px
+    line-height: 24px
+    margin: 12px 0 0 0
+    outline: none
+    width: 100%
+
+    &:first-line
+      color: #333
+      font-size: 18px
+      font-weight: 600
+
+  input[type="text"]
+    border: 1px solid #e2e2e2
+    border-radius: 3px
+    color: #999
+    display: block
+    font-size: 16px
+    font-style: italic
+    line-height: 32px
+    margin: 0
+    padding: 8px 16px
+    width: 100%

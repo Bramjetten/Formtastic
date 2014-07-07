@@ -1,0 +1,9 @@
+{
+  "packages": {
+    "iron-router": {},
+    "scss": {},
+    "bourbon": {},
+    "neat": {},
+    "normalize.css": {}
+  }
+}
