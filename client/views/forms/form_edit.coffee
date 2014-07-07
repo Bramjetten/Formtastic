@@ -7,6 +7,7 @@ Template.formEdit.events
       formId: this._id
       label: 'Label'
       placeholder: 'Vul hier in'
+      addedAt: new Date().getTime()
     }
 
     # Actually call the method to add it
@@ -16,4 +17,4 @@ Template.formEdit.events
 
 Template.formEdit.helpers
   entries: ->
-    return Entries.find(formId: this._id)
+    return Entries.find({formId: this._id}, {sort: {addedAt: 1}})

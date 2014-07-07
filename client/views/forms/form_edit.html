@@ -1,20 +1,10 @@
 <template name="formEdit">
-  <div class="control-group">
-    <div class="control-label">
-      <p class="control-label-textarea" contenteditable="true">
-        Voornaam
-      </p>
-    </div>
-    <div class="control-input">
-      <input type="text" name="placeholder" value="Voornaam" />
-    </div>
+
+  <div class="form-entries">
+    {{#each entries}}
+      {{> entryForm}}
+    {{/each}}
   </div>
 
-  <div class="control-group-divider"></div>
-
-  {{#each entries}}
-    {{> entry}}
-  {{/each}}
-
-  <a href="#" class="add-entry">Add entry</a>
+  <a href="#" class="add-entry icon-plus"></a>
 </template>
