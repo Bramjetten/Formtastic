@@ -23,6 +23,10 @@ Template.formEdit.events
       if error
         return alert(error.reason)
 
+  'click .share-form': (e) ->
+    e.preventDefault()
+    $('#overlay').show()
+
 Template.formEdit.helpers
   entries: ->
     return Entries.find({formId: this._id}, {sort: {addedAt: 1}})

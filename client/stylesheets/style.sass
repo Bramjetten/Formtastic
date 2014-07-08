@@ -1,6 +1,7 @@
 @import configuration
 @import packages/bourbon/bourbon
 @import packages/neat/neat
+@import animate
 @import fonts
 
 body
@@ -21,7 +22,14 @@ body
     font-size: 52px
     font-weight: 300
     text-align: center
-    margin: 100px 0
+    margin: 72px 0 0 0
+
+  p
+    color: #ddd
+    font-size: 20px
+    line-height: 30px
+    margin-bottom: 72px
+    text-align: center
 
   input
     background: none
@@ -38,6 +46,30 @@ body
 // Create form
 .form-entries
   padding-top: 20px
+
+// Share form
+a.share-form
+  background: #06557e
+  border-radius: 3px
+  color: #fff
+  display: inline-block
+  font-size: 16px
+  font-weight: 600
+  line-height: 46px
+  padding: 0 18px
+  position: absolute
+  right: 10px
+  text-decoration: none
+  top: 10px
+  @include transition(background .2s ease)
+
+  &:hover
+    background: darken(#06557e, 5%)
+
+  &:before
+    font-size: 120%
+    margin-right: 8px
+    vertical-align: sub
 
 // Add entry
 .add-entry
@@ -99,21 +131,112 @@ form.entry-form:last-child .control-group-divider
       font-size: 18px
       font-weight: 600
 
-  input[type="text"]
-    border: 1px solid #e2e2e2
-    border-radius: 3px
-    color: #999
-    display: block
-    font-size: 16px
-    font-style: italic
-    line-height: 32px
-    margin: 0
-    padding: 8px 16px
-    width: 100%
+// Modal
+#overlay
+  background: rgba(0, 0, 0, .6)
+  display: none
+  height: 100%
+  position: fixed
+  top: 0
+  width: 100%
 
-    &[name="value"]
+  .modal
+    text-align: center
+    @include outer-container
+    @include pad
+
+  .modal-container
+    background: #f5f5f5
+    border-radius: 3px 3px 5px 5px
+    position: relative
+    text-align: left
+    @include span-columns(8)
+    @include shift(2)
+
+    @include media($mobile)
+      @include span-columns(4)
+      @include shift(0)
+
+  .modal-header
+    padding: 0 24px
+
+    h2
+      color: #06557e
+      font-size: 24px
+      font-weight: 600
+      margin-top: 24px
+
+    .close-modal
+      color: #999
+      font-size: 22px
+      font-weight: 900
+      padding: 6px 8px
+      position: absolute
+      right: 0
+      text-decoration: none
+      top: 0
+
+      &:hover
+        color: #333
+
+  .modal-content
+    padding: 0 24px
+
+    input[type="text"]
+      margin: 14px 0
+
+    p
       color: #333
-      font-style: normal
+      line-height: 24px
+      margin-top: 16px
+      margin-left: 16px
 
-      @include placeholder
-        font-style: italic
+    p strong
+      font-weight: 600
+
+  .modal-footer
+    margin-top: 24px
+
+    button
+      background: #06557e
+      border-radius: 0 0 3px 3px
+      border: none
+      color: #fff
+      font-size: 18px
+      font-weight: 600
+      line-height: 50px
+      width: 100%
+      @include transition(background .2s ease)
+
+      &:before
+        font-size: 120%
+        margin-right: 10px
+        vertical-align: middle
+
+      &:hover
+        background: darken(#06557e, 5%)
+
+// Input fields
+
+input[type="text"].input, textarea.input
+  border: 1px solid #e2e2e2
+  border-radius: 3px
+  color: #999
+  display: block
+  font-size: 16px
+  font-style: italic
+  line-height: 32px
+  margin: 0
+  padding: 8px 16px
+  resize: none
+  width: 100%
+
+  &[name="value"], &.input-value
+    color: #333
+    font-style: normal
+
+    @include placeholder
+      font-style: italic
+
+textarea.input
+  height: 120px

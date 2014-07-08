@@ -1,0 +1,26 @@
+<template name="formShare">
+  <div id="overlay">
+    <div class="modal">
+      <form>
+        <div class="modal-container">
+          <div class="modal-header">
+            <h2>Deel je formulier</h2>
+
+            <a href="#" class="close-modal">&times;</a>
+          </div>
+          <div class="modal-content">
+            <input class="input input-value" type="text" name="creator" placeholder="Je naam" value="{{creator}}" />
+            <input class="input input-value" type="text" name="email" placeholder="Je emailadres" value="{{email}}" />
+
+            <p><strong>Voeg een persoonlijke boodschap toe voor nét dat beetje extra:</strong></p>
+
+            <textarea class="input input-value" placeholder="Welkomstbericht" name="personal_message">{{personal_message}}</textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="icon-link">Genereer link om te delen</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</template>
