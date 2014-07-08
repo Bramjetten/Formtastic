@@ -7,10 +7,16 @@
     </div>
   </div>
 
-  <div class="form-entries">
-    {{#each entries}}
-      {{> entry}}
-    {{/each}}
-  </div>
+  <form>
+    <div class="form-entries">
+      {{#each entries}}
+        {{> entry}}
+      {{/each}}
+    </div>
+
+    <div class="form-footer">
+      <button class="form-submit-button icon-mail" type="submit">Verzenden naar {{creator}}</button>
+    </div>
+  </form>
 
 </template>

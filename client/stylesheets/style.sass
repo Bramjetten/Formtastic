@@ -87,7 +87,7 @@ a.share-form
 .control-group-divider
   border-bottom: 1px solid #e9e9e9
 
-form.entry-form:last-child .control-group-divider
+.entry-form:last-child .control-group-divider
   border: none
 
 .control-group
@@ -130,6 +130,33 @@ form.entry-form:last-child .control-group-divider
       color: #333
       font-size: 18px
       font-weight: 600
+
+// Submit form
+.form-footer
+  border-top: 2px solid #e9e9e9
+  margin: 48px 0
+  padding: 24px 0
+
+.form-submit-button
+  background: #06557e
+  border: none
+  border-radius: 3px
+  color: #fff
+  display: block
+  font-size: 20px
+  font-weight: 600
+  line-height: 60px
+  padding: 0 60px
+  margin: 0 auto
+  @include transition(background .2s ease)
+
+  &:hover
+    background: darken(#06557e, 5%)
+
+  &:before
+    font-size: 120%
+    margin-right: 12px
+    vertical-align: sub
 
 // Modal
 #overlay
