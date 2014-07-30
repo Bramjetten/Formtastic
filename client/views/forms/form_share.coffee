@@ -20,6 +20,7 @@ Template.formShare.events
       creator: $(e.target).find('input[name="creator"]').val()
       email: $(e.target).find('input[name="email"]').val()
       personal_message: $(e.target).find('textarea[name="personal_message"]').val()
+      public_link: $(e.target).find('input[name="public_link"]').val()
     }
 
     # Update form with new name

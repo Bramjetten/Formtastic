@@ -4,6 +4,7 @@
     "scss": {},
     "bourbon": {},
     "neat": {},
-    "normalize.css": {}
+    "normalize.css": {},
+    "mandrill": {}
   }
 }

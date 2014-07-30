@@ -13,3 +13,5 @@ bourbon
 neat
 normalize.css
 jquery
+mandrill
+email
