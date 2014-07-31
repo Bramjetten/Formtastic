@@ -1,0 +1,13 @@
+<template name="navigation">
+  <ul id="navigation">
+    <li><a id="logo" class="icon-rocket" href="{{pathFor 'formNew'}}">Formglue</a></li>
+
+    {{#each forms}}
+      <li><a href="{{pathFor 'formEdit'}}">
+        {{#if name}}{{name}}{{/if}}
+      </a></li>
+    {{/each}}
+
+    <li class="bottom">{{> loginButtons}}</li>
+  </ul>
+</template>

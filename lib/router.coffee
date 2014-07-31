@@ -3,9 +3,11 @@ Router.configure
 
 Router.map ->
   this.route 'formNew', { 
+    path: '/'
+  }
+
+  this.route 'formNew', {
     path: '/new'
-    template: 'formEdit'
-    data: -> return Forms.findOne(Forms.insert({}))
   }
 
   this.route 'formEdit', {
