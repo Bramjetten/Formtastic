@@ -26,6 +26,8 @@ Template.formEdit.events
   'click .share-form': (e) ->
     e.preventDefault()
     $('#overlay').show()
+    if $('.modal input[name="email"]').val() is ""
+      $('.modal input[name="email"]').val("#{Meteor.user().emails[0].address}")
 
 Template.formEdit.helpers
   entries: ->

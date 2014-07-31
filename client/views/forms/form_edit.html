@@ -1,7 +1,7 @@
 <template name="formEdit">
-
   <div id="header">
     <div class="container">
+
       <a href="#" class="share-form icon-share">Deel formulier</a>
 
       <input type="text" name="name" placeholder="Titel" value="{{name}}" />
@@ -9,6 +9,8 @@
   </div>
 
   <div class="form-entries">
+    {{> loginButtons}}
+    
     {{#each entries}}
       {{> entryForm}}
     {{/each}}
