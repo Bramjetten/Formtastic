@@ -14,8 +14,9 @@ Template.form.events
     for field in form
       mailContent += "#{field.name}: #{field.value}<br />"
 
-    # Send email with Mandrill
-    Meteor.call('sendEmail', this.email, "Ingevuld formulier: #{this.name}", mailContent)
+    if confirm("Heb je alles goed ingevuld?")
+      # Send email with Mandrill
+      Meteor.call('sendEmail', this.email, "Ingevuld formulier: #{this.name}", mailContent)
 
-    # Disable button
-    $(e.target).find('button[type="submit"]').prop('disabled', true).text('Formulier verzonden').removeClass('icon-mail').addClass('icon-tick')
+      # Disable button
+      $(e.target).find('button[type="submit"]').prop('disabled', true).text('Formulier verzonden').removeClass('icon-mail').addClass('icon-tick')

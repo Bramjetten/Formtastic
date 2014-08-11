@@ -6,27 +6,27 @@
       </div>
       <div class="control-input">
         {{#if entryIs "text"}}
-          <input type="text" class="input" name="{{name}}" placeholder="{{placeholder}}" />
+          <input type="text" class="input" name="{{labelName}}" placeholder="{{placeholder}}" />
         {{/if}}
         {{#if entryIs "textarea"}}
-          <textarea class="input" name="{{name}}" placeholder="{{placeholder}}"></textarea>
+          <textarea class="input" name="{{labelName}}" placeholder="{{placeholder}}"></textarea>
         {{/if}}
         {{#if entryIs "checkbox"}}
           {{#each listItems}}
             <div class="input-checkbox">
-              <label><input type="checkbox" value="{{item}}" name="{{name}}" /> {{item}}</label>
+              <label><input type="checkbox" value="{{value}}" name="{{name}}" /> {{value}}</label>
             </div>
           {{/each}}
         {{/if}}
         {{#if entryIs "radio"}}
           {{#each listItems}}
             <div class="input-radio">
-              <label><input type="radio" value="{{item}}" name="{{name}}" /> {{item}}</label>
+              <label><input type="radio" value="{{value}}" name="{{name}}" /> {{value}}</label>
             </div>
           {{/each}}
         {{/if}}
         {{#if entryIs undefined}}
-          <input type="text" class="input" name="{{label}}" placeholder="{{placeholder}}" />
+          <input type="text" class="input" name="{{labelName}}" placeholder="{{placeholder}}" />
         {{/if}}
       </div>
     </div>
