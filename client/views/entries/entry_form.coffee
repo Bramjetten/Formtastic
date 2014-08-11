@@ -24,3 +24,9 @@ Template.entryForm.events
     Entries.update entryId, {$set: entryProperties}, (error) ->
       if error
         alert(error.reason)
+
+Template.entryForm.rendered = () ->
+  if !this._rendered
+    this._rendered = true
+    console.log 'Template load!'
+    $('textarea').autosize()
