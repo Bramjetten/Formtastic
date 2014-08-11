@@ -16,8 +16,9 @@ Template.entryForm.events
 
     # Set entry properties
     entryProperties = {
-      placeholder:  form.find('input[name="placeholder"]').val()
+      placeholder:  form.find('[name="placeholder"]').val()
       label:        form.find('textarea[name="label"]').val()
+      entryType:    form.find('select[name="entry-type"]').val()
     }
 
     # Update entry with new placeholder text
@@ -25,8 +26,18 @@ Template.entryForm.events
       if error
         alert(error.reason)
 
+Template.entry.helpers
+  listItems: ->
+    name = this.label.match(/(.*)\n/)[1]
+    return this.placeholder.split("\n").map (item) => {name: name, item: item}
+
+Template.entry.entryIs = (entryType) ->
+  return this.entryType is entryType
+
+Template.entryForm.entryIs = (entryType) ->
+  return this.entryType is entryType
+
 Template.entryForm.rendered = () ->
   if !this._rendered
     this._rendered = true
-    console.log 'Template load!'
-    $('textarea').autosize()
+    $('textarea.control-label-textarea').autosize()

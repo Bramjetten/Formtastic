@@ -2,10 +2,32 @@
   <div class="entry-form">
     <div class="control-group">
       <div class="control-label">
-        <p class="control-label-textarea" name="label">{{label}}</p>
+        <pre class="control-label-textarea">{{label}}</pre>
       </div>
       <div class="control-input">
-        <input type="text" class="input" name="{{label}}" placeholder="{{placeholder}}" />
+        {{#if entryIs "text"}}
+          <input type="text" class="input" name="{{name}}" placeholder="{{placeholder}}" />
+        {{/if}}
+        {{#if entryIs "textarea"}}
+          <textarea class="input" name="{{name}}" placeholder="{{placeholder}}"></textarea>
+        {{/if}}
+        {{#if entryIs "checkbox"}}
+          {{#each listItems}}
+            <div class="input-checkbox">
+              <label><input type="checkbox" value="{{item}}" name="{{name}}" /> {{item}}</label>
+            </div>
+          {{/each}}
+        {{/if}}
+        {{#if entryIs "radio"}}
+          {{#each listItems}}
+            <div class="input-radio">
+              <label><input type="radio" value="{{item}}" name="{{name}}" /> {{item}}</label>
+            </div>
+          {{/each}}
+        {{/if}}
+        {{#if entryIs undefined}}
+          <input type="text" class="input" name="{{label}}" placeholder="{{placeholder}}" />
+        {{/if}}
       </div>
     </div>
 

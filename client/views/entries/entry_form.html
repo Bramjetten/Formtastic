@@ -6,7 +6,34 @@
       </div>
       <div class="control-input">
         <a href="#" class="delete-entry icon-roundcross"></a>
-        <input class="input" type="text" name="placeholder" value="{{placeholder}}" />
+        <div class="select-dropdown entry-type">
+          <select name="entry-type">
+            <option value="text" {{selected entryType "text"}}>Tekst</option>
+            <option value="textarea" {{selected entryType "textarea"}}>Tekstveld</option>
+            <option value="checkbox" {{selected entryType "checkbox"}}>Meerdere opties</option>
+            <option value="radio" {{selected entryType "radio"}}>Enkele optie</option>
+          </select>
+        </div>
+
+        {{#if entryIs "text"}}
+          <input class="input" type="text" name="placeholder" value="{{placeholder}}" />
+        {{/if}}
+
+        {{#if entryIs "textarea"}}
+          <textarea class="input" name="placeholder">{{placeholder}}</textarea>
+        {{/if}}
+
+        {{#if entryIs "checkbox"}}
+          <textarea class="input textarea-checkbox" name="placeholder">{{placeholder}}</textarea>
+        {{/if}}
+
+        {{#if entryIs "radio"}}
+          <textarea class="input textarea-radio" name="placeholder">{{placeholder}}</textarea>
+        {{/if}}
+
+        {{#if entryIs undefined}}
+          <input class="input" type="text" name="placeholder" value="{{placeholder}}" />
+        {{/if}}
       </div>
     </div>
 
