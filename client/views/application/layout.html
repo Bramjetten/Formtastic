@@ -1,9 +1,11 @@
 <template name="layout">
-  {{> navigation}}
+  <div id="threed_wrapper">
+    {{> navigation}}
 
-  <div id="main_container">
-    {{> navigationButton}}
+    <div id="main_container">
+      {{> navigationButton}}
 
-    {{> yield}}
+      {{> yield}}
+    </div>
   </div>
 </template>

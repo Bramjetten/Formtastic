@@ -28,13 +28,14 @@ Template.entryForm.events
 
 Template.entry.helpers
   labelName: ->
-    return this.label.match(/(.*)\n?/)[1]
+    matches = this.label.match(/(.*)\n?/) if this.label
+    if matches and matches.length > 1
+      return matches[1]
 
   listItems: ->
-    return ({name: this.name, value: item} for item in this.placeholder.split("\n"))
-
-Template.entry.name = ->
-  return this.label.match(/(.*)\n?/)[1]
+    matches = this.label.match(/(.*)\n?/) if this.label
+    if matches and matches.length > 1
+      return ({name: matches[1], value: item} for item in this.placeholder.split("\n"))
 
 Template.entry.entryIs = (entryType) ->
   return this.entryType is entryType
