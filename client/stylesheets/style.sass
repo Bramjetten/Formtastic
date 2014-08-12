@@ -478,7 +478,7 @@ textarea.input
       vertical-align: sub
 
   &.opened .entry-label
-    background: #06557e
+    background: tint(#06557e, 20%)
     border-radius: 3px 3px 0 0
     color: #fff
 
@@ -486,7 +486,7 @@ textarea.input
       color: #fff
 
   .dropdown
-    background: #06557e
+    background: tint(#06557e, 20%)
     border-radius: 5px 0 5px 5px
     display: none
     position: absolute
@@ -499,7 +499,7 @@ textarea.input
     display: block
 
   .dropdown .dropdown-column
-    border-right: 1px solid rgba(255, 255, 255, .1)
+    border-right: 2px dashed rgba(255, 255, 255, .1)
     float: left
     width: 140px
 
@@ -511,11 +511,10 @@ textarea.input
     display: block
     height: 42px
     text-decoration: none
-    text-transform: uppercase
-    font-size: 11px
-    font-weight: 700
+    font-size: 13px
+    font-weight: 600
     line-height: 42px
-    padding: 0 12px
+    padding: 0 16px
 
     &:hover, &.selected
       color: #fff
