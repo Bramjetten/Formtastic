@@ -3,7 +3,9 @@
     {{> navigation}}
 
     <div id="main_container">
-      {{> navigationButton}}
+      {{#unless routeIs 'form' }}
+        {{> navigationButton}}
+      {{/unless}}
 
       {{> yield}}
     </div>
