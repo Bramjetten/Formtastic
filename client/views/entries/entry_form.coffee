@@ -5,6 +5,17 @@ Template.entryForm.events
     entryId = this._id
     Entries.remove(entryId)
 
+  'click .entry-label': (e) ->
+    e.preventDefault()
+    $(e.target).closest('.entry-type').toggleClass('opened')
+
+  'click .entry-type .dropdown a': (e) ->
+    e.stopPropagation()
+    e.preventDefault()
+    value = $(e.target).attr('data-value')
+    Entries.update this._id, {$set: {entryType: value}}
+    $('.entry-type.opened').removeClass('opened')
+
   'change form': (e) ->
     e.preventDefault()
 
@@ -18,7 +29,7 @@ Template.entryForm.events
     entryProperties = {
       placeholder:  form.find('[name="placeholder"]').val()
       label:        form.find('textarea[name="label"]').val()
-      entryType:    form.find('select[name="entry-type"]').val()
+      entryType:    form.find('input[name="entry-type"]').val()
     }
 
     # Update entry with new placeholder text

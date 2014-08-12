@@ -427,7 +427,7 @@ textarea.input
 .entry-form
   .entry-type
     position: absolute
-    right: 4px
+    right: 0
 
   .control-input
     textarea.input
@@ -453,45 +453,67 @@ textarea.input
 .select-dropdown
   background: none
   border-radius: 3px
-  display: inline-block
+  display: block
   line-height: 28px
   margin: 0
-  overflow: hidden
   padding: 0
   position: relative
   @include transition(border .2s ease)
 
-  &:after
-    color: #666
-    content: "i"
-    font-family: "formulierapp"
-    font-size: 12px
-    font-weight: normal
-    line-height: 32px
-    padding: 8px 0
-    position: absolute
-    right: 8px
-    top: 0
-    vertical-align: middle
-    z-index: 1
-
-  select
-    background-color: transparent
-    background-image: none
-    border: none
-    box-shadow: none
+  .entry-label
     color: #666
     cursor: pointer
-    direction: rtl
-    display: inline-block
     font-size: 12px
     font-weight: 600
-    line-height: 32px
-    margin: 0
-    outline: none
-    padding: 9px 24px 9px 10px
-    position: relative
+    line-height: 50px
+    padding: 0 8px 0 16px
     text-transform: uppercase
-    width: 100%
+
+    i
+      color: #999
+      font-size: 14px
+      line-height: 50px
+      margin-left: 4px
+
+    i:before
+      vertical-align: sub
+
+  &.opened .entry-label
+    background: #222
+    border-radius: 3px 3px 0 0
+    color: #fff
+
+  .dropdown
+    background: #222
+    border-radius: 5px 0 5px 5px
+    display: none
+    position: absolute
+    right: 0
+    top: 50px
+    width: 360px
     z-index: 2
-    @include appearance(none)
+
+  &.opened .dropdown
+    display: block
+
+  .dropdown .dropdown-column
+    float: left
+    width: 120px
+
+  .dropdown a
+    color: #919191
+    display: block
+    text-decoration: none
+    text-transform: uppercase
+    font-size: 11px
+    font-weight: 700
+    line-height: 42px
+    padding: 0 12px
+
+    &:hover, &.selected
+      color: #fff
+
+    &:before
+      font-size: 16px
+      margin-right: 8px
+      vertical-align: sub

@@ -6,13 +6,28 @@
       </div>
       <div class="control-input">
         <a href="#" class="delete-entry icon-roundcross"></a>
-        <div class="select-dropdown entry-type">
-          <select name="entry-type">
-            <option value="text" {{selected entryType "text"}}>Tekst</option>
-            <option value="textarea" {{selected entryType "textarea"}}>Tekstveld</option>
-            <option value="checkbox" {{selected entryType "checkbox"}}>Meerdere opties</option>
-            <option value="radio" {{selected entryType "radio"}}>Enkele optie</option>
-          </select>
+        <div class="select-dropdown entry-type opened">
+          <input type="hidden" value="{{entryType}}" name="entry-type" />
+
+          <div class="entry-label">{{entryType}} <i class="icon-caret"></i></div>
+
+          <div class="dropdown">
+            <div class="dropdown-column">
+              <a href="#" class="icon-text {{selected entryType 'text'}}" data-value="text">Tekstregel</a>
+              <a href="#" class="icon-text {{selected entryType 'textarea'}}" data-value="textarea">Tekstveld</a>
+              <a href="#" class="icon-email {{selected entryType 'email'}}" data-value="text">Email</a>
+              <a href="#" class="icon-compass {{selected entryType 'postal_code'}}" data-value="text">Postcode</a>
+            </div>
+            <div class="dropdown-column">
+              <a href="#" class="icon-numeric {{selected entryType 'numeric'}}" data-value="text">Numeriek</a>
+              <a href="#" class="icon-calendar {{selected entryType 'date'}}" data-value="text">Datum</a>
+              <a href="#" class="icon-clock {{selected entryType 'time'}}" data-value="text">Tijd</a>
+            </div>
+            <div class="dropdown-column">
+              <a href="#" class="icon-radio {{selected entryType 'radio'}}" data-value="radio">Enkelkeuze</a>
+              <a href="#" class="icon-tickbox {{selected entryType 'checkbox'}}" data-value="checkbox">Meerkeuze</a>
+            </div>
+          </div>
         </div>
 
         {{#if entryIs "text"}}
