@@ -14,7 +14,6 @@ Template.formEdit.events
     entry = {
       formId: this._id
       label: 'Label'
-      placeholder: 'Vul hier in'
       entryType: 'text'
       addedAt: new Date().getTime()
     }
