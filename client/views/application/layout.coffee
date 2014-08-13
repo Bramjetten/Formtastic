@@ -8,3 +8,7 @@ Template.layout.events
 Template.layout.rendered = ->
   skrollr.init
     forceHeight: false
+
+  window.addEventListener 'load', ->
+    FastClick.attach(document.body)
+  , false
