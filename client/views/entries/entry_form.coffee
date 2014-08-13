@@ -7,7 +7,13 @@ Template.entryForm.events
 
   'click .entry-label': (e) ->
     e.preventDefault()
-    $(e.target).closest('.entry-type').toggleClass('opened')
+    e.stopPropagation()
+    if $(e.target).closest('.entry-type').hasClass('opened')
+      $('.entry-type').removeClass('opened')
+    else
+      $('.entry-type').removeClass('opened')
+      $(e.target).closest('.entry-type').addClass('opened')
+    
 
   'click .entry-type .dropdown a': (e) ->
     e.stopPropagation()
