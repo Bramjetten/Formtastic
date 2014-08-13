@@ -1,5 +1,5 @@
 Template.navigation.events
-  'click #navigation a': (e) ->
+  'click #navigation li > a': (e) ->
     $('#threed_wrapper').toggleClass('navigation-open')
 
 Template.navigation.helpers
