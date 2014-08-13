@@ -20,3 +20,8 @@ Template.entry.rendered = ->
       when 'postal_code'
         new Formatter $(this.firstNode).find('input')[0],
           'pattern': '{{9999}} {{aa}}'
+      when 'date'
+        $(this.firstNode).find('input').pickadate()
+      when 'time'
+        $(this.firstNode).find('input').pickatime
+          format: 'H:i'
