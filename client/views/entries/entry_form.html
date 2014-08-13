@@ -9,23 +9,23 @@
         <div class="select-dropdown entry-type">
           <input type="hidden" value="{{entryType}}" name="entry-type" />
 
-          <div class="entry-label">{{entryType}} <i class="icon-caret"></i></div>
+          <div class="entry-label">{{entryTypeLabel}} <i class="icon-caret"></i></div>
 
           <div class="dropdown">
             <div class="dropdown-column">
               <a href="#" class="icon-text {{selected entryType 'text'}}" data-value="text">Tekstregel</a>
               <a href="#" class="icon-text {{selected entryType 'textarea'}}" data-value="textarea">Tekstveld</a>
-              <a href="#" class="icon-email {{selected entryType 'email'}}" data-value="text">Email</a>
-              <a href="#" class="icon-compass {{selected entryType 'postal_code'}}" data-value="text">Postcode</a>
+              <a href="#" class="icon-email {{selected entryType 'email'}}" data-value="email">Email</a>
+              <a href="#" class="icon-compass {{selected entryType 'postal_code'}}" data-value="postal_code">Postcode</a>
             </div>
             <div class="dropdown-column">
-              <a href="#" class="icon-numeric {{selected entryType 'numeric'}}" data-value="text">Numeriek</a>
-              <a href="#" class="icon-currency {{selected entryType 'currency'}}" data-value="text">Valuta</a>
-              <a href="#" class="icon-calendar {{selected entryType 'date'}}" data-value="text">Datum</a>
-              <a href="#" class="icon-clock {{selected entryType 'time'}}" data-value="text">Tijd</a>
+              <a href="#" class="icon-numeric {{selected entryType 'numeric'}}" data-value="numeric">Numeriek</a>
+              <a href="#" class="icon-currency {{selected entryType 'currency'}}" data-value="currency">Valuta</a>
+              <a href="#" class="icon-calendar {{selected entryType 'date'}}" data-value="date">Datum</a>
+              <a href="#" class="icon-clock {{selected entryType 'time'}}" data-value="time">Tijd</a>
             </div>
             <div class="dropdown-column">
-              <a href="#" class="icon-radio {{selected entryType 'radio'}}" data-value="radio">Enkelkeuze</a>
+              <a href="#" class="icon-radio {{selected entryType 'radio'}}" data-value="radio">Enkele keuze</a>
               <a href="#" class="icon-tickbox {{selected entryType 'checkbox'}}" data-value="checkbox">Meerkeuze</a>
             </div>
           </div>
@@ -37,6 +37,30 @@
 
         {{#if entryIs "textarea"}}
           <textarea class="input" placeholder="Placeholder" name="placeholder">{{placeholder}}</textarea>
+        {{/if}}
+
+        {{#if entryIs "email"}}
+          <input class="input" type="text" placeholder="Placeholder" name="placeholder" value="{{placeholder}}" />
+        {{/if}}
+
+        {{#if entryIs "postal_code"}}
+          <input class="input" type="text" placeholder="Placeholder" name="placeholder" value="{{placeholder}}" />
+        {{/if}}
+
+        {{#if entryIs "numeric"}}
+          <input class="input" type="text" placeholder="Placeholder" name="placeholder" value="{{placeholder}}" />
+        {{/if}}
+
+        {{#if entryIs "currency"}}
+          <input class="input" type="text" placeholder="Placeholder" name="placeholder" value="{{placeholder}}" />
+        {{/if}}
+
+        {{#if entryIs "date"}}
+          <input class="input" type="text" placeholder="Placeholder" name="placeholder" value="{{placeholder}}" />
+        {{/if}}
+
+        {{#if entryIs "time"}}
+          <input class="input" type="text" placeholder="Placeholder" name="placeholder" value="{{placeholder}}" />
         {{/if}}
 
         {{#if entryIs "checkbox"}}

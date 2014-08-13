@@ -13,7 +13,6 @@ Template.entryForm.events
     else
       $('.entry-type').removeClass('opened')
       $(e.target).closest('.entry-type').addClass('opened')
-    
 
   'click .entry-type .dropdown a': (e) ->
     e.stopPropagation()
@@ -64,3 +63,19 @@ Template.entryForm.rendered = () ->
   if !this._rendered
     this._rendered = true
     $('textarea.control-label-textarea').autosize()
+
+Template.entryForm.helpers
+  entryTypeLabel: ->
+    entryTypes =
+      text:         'Tekstregel'
+      textarea:     'Tekstveld'
+      email:        'Email'
+      postal_code:  'Postcode'
+      numeric:      'Numeriek'
+      currency:     'Valuta'
+      date:         'Datum'
+      time:         'Tijd'
+      radio:        'Enkele keuze'
+      checkbox:     'Meerkeuze'
+
+    return entryTypes[this.entryType]
