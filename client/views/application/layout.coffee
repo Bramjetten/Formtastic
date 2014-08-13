@@ -7,7 +7,4 @@ Template.layout.events
 
 Template.layout.rendered = ->
   skrollr.init
-
-  window.addEventListener 'load', ->
-    new FastClick(document.body)
-  , false
+  new FastClick(document.body)
