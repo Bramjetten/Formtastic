@@ -1,11 +1,16 @@
 <template name="formEdit">
   <div id="header">
+    {{#if public_link}}
+      <div class="share-link-container">
+        <input type="text" value="http://formtastic.io/{{public_link}}" />
+      </div>
+    {{/if}}
+
+    <a href="#" class="share-form icon-share">Deel formulier</a>
+
     <div class="container">
-
-      <a href="#" class="share-form icon-share">Deel formulier</a>
-
       <div data-0="opacity: 1; transform: translateY(0px);" data-300="opacity: 0; transform: translateY(100px)">
-        <input type="text" name="name" placeholder="Titel" value="{{name}}" />
+        <input type="text" name="name" class="header-input" placeholder="Titel" value="{{name}}" />
       </div>
     </div>
   </div>
