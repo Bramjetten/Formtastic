@@ -7,4 +7,3 @@ Template.layout.events
 
 Template.layout.rendered = ->
   skrollr.init
-    forceHeight: false
