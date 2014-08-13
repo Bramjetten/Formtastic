@@ -365,7 +365,7 @@ a.share-form
 
 // Input fields
 
-input[type="text"].input, textarea.input
+.input
   border: 1px solid #e2e2e2
   border-radius: 3px
   color: #999
@@ -391,7 +391,8 @@ textarea.input
 
 // Form Submit
 .public-form
-  input[type="text"].input, textarea.input
+  .input, textarea.input
+
     color: #333
     font-style: normal
 
@@ -422,6 +423,14 @@ textarea.input
 
     &:last-child label
       border-radius: 0 0 3px 3px
+
+// Input types
+.input
+  &.input-postal-code
+    text-transform: uppercase
+
+    @include placeholder
+      text-transform: none
 
 // Entry form
 .entry-form

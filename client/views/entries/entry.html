@@ -11,6 +11,24 @@
         {{#if entryIs "textarea"}}
           <textarea class="input" name="{{labelName}}" placeholder="{{placeholder}}"></textarea>
         {{/if}}
+        {{#if entryIs "email"}}
+          <input type="email" class="input" name="{{labelName}}" placeholder="{{placeholder}}" />
+        {{/if}}
+        {{#if entryIs "postal_code"}}
+          <input type="text" class="input input-postal-code" name="{{labelName}}" placeholder="{{placeholder}}" />
+        {{/if}}
+        {{#if entryIs "numeric"}}
+          <input type="number" class="input" name="{{labelName}}" placeholder="{{placeholder}}" />
+        {{/if}}
+        {{#if entryIs "currency"}}
+          <input type="number" class="input" name="{{labelName}}" placeholder="{{placeholder}}" />
+        {{/if}}
+        {{#if entryIs "date"}}
+          <input type="date" class="input" name="{{labelName}}" placeholder="{{placeholder}}" />
+        {{/if}}
+        {{#if entryIs "time"}}
+          <input type="time" class="input" name="{{labelName}}" placeholder="{{placeholder}}" />
+        {{/if}}
         {{#if entryIs "checkbox"}}
           {{#each listItems}}
             <div class="input-checkbox">
