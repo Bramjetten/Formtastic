@@ -1,8 +1,7 @@
 Template.layout.events
-  'click .navigation-open #main_container': (e) ->
-    $('#threed_wrapper').removeClass('navigation-open')
-
-  'click #threed_wrapper': (e) ->
+  'click #main_container': (e) ->
+    console.log 'HI'
+    $('body').removeClass('navigation-open')
     $('.select-dropdown.opened').removeClass('opened')
 
 Template.layout.rendered = ->

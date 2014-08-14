@@ -1,6 +1,6 @@
 Template.navigation.events
   'click #navigation li > a': (e) ->
-    $('#threed_wrapper').toggleClass('navigation-open')
+    $('body').toggleClass('navigation-open')
 
 Template.navigation.helpers
   forms: ->
