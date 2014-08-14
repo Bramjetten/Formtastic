@@ -161,17 +161,29 @@ body, #threed_wrapper
   padding: 4px
 
   input
+    display: none
+
+  .share-link
     background: shade(#b23a3a, 20%)
     border: none
     border-radius: 3px
     color: #fff
     cursor: text
+    display: inline-block
     font-size: 16px
     font-weight: 600
     line-height: 26px
     outline: none
     padding: 6px 12px
-    width: 350px
+
+    span
+      color: #da4848
+      margin-right: 2px
+
+      &:before
+        font-size: 120%
+        margin-right: 8px
+        vertical-align: sub
 
 // New form
 .form-new-header
