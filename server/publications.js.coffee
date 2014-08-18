@@ -10,6 +10,6 @@ Meteor.methods
   sendEmail: (to, subject, htmlText) ->
     Meteor.Mandrill.send
       to: to
-      from: "no-reply@formtastic.io"
+      from: "no-reply@formglue.nl"
       subject: subject
       html: htmlText
