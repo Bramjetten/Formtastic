@@ -109,6 +109,7 @@ body
   h1
     font-size: 52px
     font-weight: 300
+    line-height: 68px
     text-align: center
     margin: 72px 0 0 0
 
@@ -125,6 +126,7 @@ body
     color: #fff
     font-size: 52px
     font-weight: 300
+    height: 68px
     margin: 72px 0
     line-height: 68px
     outline: none
@@ -178,7 +180,6 @@ body
 
     span
       color: #fff
-      margin-right: 2px
       opacity: .5
 
       &:before
@@ -195,18 +196,20 @@ body
   padding-top: 20px
 
 // Share form
-a.share-form
+.header-actions
+  position: absolute
+  right: 10px
+  top: 10px
+  z-index: 2
+
+.header-actions a
   color: #fff
   display: inline-block
   font-size: 16px
   font-weight: 600
   line-height: 46px
   padding: 0 18px
-  position: absolute
-  right: 10px
   text-decoration: none
-  top: 10px
-  z-index: 2
   @include transition(background .2s ease)
 
   &:hover
@@ -494,6 +497,44 @@ textarea.input
 
     textarea.textarea-radio
       background-image: url(/images/radio.png)
+
+// Results
+.form-results
+  overflow: scroll
+  white-space: nowrap
+
+.result-page
+  background: #fff
+  display: inline-block
+  margin: 20px 0 0 20px
+  padding: 24px
+  vertical-align: top
+  white-space: normal
+  width: 25%
+
+  .result-timestamp
+    color: #999
+    float: right
+    font-size: 12px
+
+  h2
+    font-size: 16px
+    font-weight: 600
+    margin: 0
+
+  p
+    color: #333
+    font-size: 15px
+    margin: 0
+    margin-bottom: 24px
+
+  em
+    color: #999
+    font-size: 15px
+    font-style: italic
+
+  h2, p, em
+    line-height: 24px
 
 // Select dropdown
 .select-dropdown

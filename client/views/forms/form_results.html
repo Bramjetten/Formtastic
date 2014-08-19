@@ -1,0 +1,19 @@
+<template name="formResults">
+  <div id="header">
+    <div class="header-actions">
+      <a href="{{pathFor 'formEdit'}}" class="icon-pencil">Aanpassen</a>
+      <a href="#" class="share-form icon-share">Deel formulier</a>
+    </div>
+
+    <div class="container">
+      <h1>{{name}}</h1>
+      <p></p>
+    </div>
+  </div>
+
+  <div class="form-results">
+    {{#each results}}
+      {{> result}}
+    {{/each}}
+  </div>
+</template>

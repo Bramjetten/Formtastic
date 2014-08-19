@@ -15,6 +15,11 @@ Router.map ->
     data: -> return Forms.findOne(this.params._id)
   }
 
+  this.route 'formResults', {
+    path: '/:_id/results'
+    data: -> return Forms.findOne(this.params._id)
+  }
+
   this.route 'form', {
     path: '/:_public_link'
     data: -> return Forms.findOne(public_link: this.params._public_link)

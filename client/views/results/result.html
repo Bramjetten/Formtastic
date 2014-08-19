@@ -1,0 +1,13 @@
+<template name="result">
+  <div class="result-page">
+    {{#each content}}
+      <h2>{{name}}</h2>
+      {{#unless value}}
+        <em>Niet ingevuld</em>
+      {{/unless}}
+      <p>{{value}}</p>
+    {{/each}}
+
+    <div class="result-timestamp">{{timestamp}}</div>
+  </div>
+</template>

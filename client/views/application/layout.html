@@ -2,11 +2,9 @@
   {{> navigation}}
 
   <div id="main_container">
-    {{#if routeIs 'formEdit'}}
-      {{> shareBar}}
-    {{/if}}
-
     {{#unless routeIs 'form' }}
+      {{> shareBar}}
+
       {{> navigationButton}}
     {{/unless}}
 

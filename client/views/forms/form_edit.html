@@ -1,11 +1,12 @@
 <template name="formEdit">
   <div id="header">
-    <a href="#" class="share-form icon-share">Deel formulier</a>
+    <div class="header-actions">
+      <a href="{{pathFor 'formResults'}}" class="icon-results">Resultaten</a>
+      <a href="#" class="share-form icon-share">Deel formulier</a>
+    </div>
 
     <div class="container">
-      <div data-0="opacity: 1; transform: translateY(0px);" data-300="opacity: 0; transform: translateY(100px)">
-        <input type="text" name="name" class="header-input" placeholder="Titel" value="{{name}}" />
-      </div>
+      <input type="text" name="name" class="header-input" placeholder="Titel" value="{{name}}" />
     </div>
   </div>
 
