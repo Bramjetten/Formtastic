@@ -1,10 +1,9 @@
 <template name="shareBar">
   {{#if public_link}}
     <div class="share-link-container">
-      <input type="text" value="http://formtastic.io/{{public_link}}" />
-      <div class="share-link">
+      <a href="http://formglue.nl/{{public_link}}" target="_blank" class="share-link">
         <span class="icon-link">http://formglue.nl/</span>{{public_link}}
-      </div>
+      </a>
     </div>
   {{/if}}
 </template>
