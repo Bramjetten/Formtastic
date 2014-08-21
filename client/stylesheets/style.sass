@@ -526,17 +526,17 @@ textarea.input
 
 .result-page
   background: #fff
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .05)
   display: inline-block
   margin: 20px 0 0 20px
   padding: 24px
   vertical-align: top
   white-space: normal
   width: 25%
-  @include box-shadow(0 2px 5px rgba(0, 0, 0, .05))
   @include transition(all .2s ease)
 
   &:hover
-    @include box-shadow(0 2px 10px rgba(0, 0, 0, .1))
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .1)
     @include transform(scale(1.02))
 
   .result-timestamp
