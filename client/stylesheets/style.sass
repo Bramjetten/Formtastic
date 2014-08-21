@@ -286,13 +286,25 @@ body
     width: 100%
     @include transition(height .2s ease)
 
-    &:first-line
-      color: #333
-      font-size: 18px
-      font-weight: 600
+    &:first-child
+      margin-bottom: 0px
+
+    &:last-child
+      margin-top: 0px
+
+    @include placeholder
+      font-style: italic
+
+  .label-input
+    color: #333
+    font-size: 18px
+    font-weight: 600
 
   textarea.control-label-textarea
-    margin-bottom: -24px
+    margin-bottom: -18px
+
+    &:first-child
+      margin-bottom: -24px
 
 // Submit form
 .form-footer

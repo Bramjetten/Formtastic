@@ -34,6 +34,7 @@ Template.entryForm.events
     entryProperties = {
       placeholder:  form.find('[name="placeholder"]').val()
       label:        form.find('textarea[name="label"]').val()
+      description:  form.find('textarea[name="description"]').val()
       entryType:    form.find('input[name="entry-type"]').val()
     }
 
