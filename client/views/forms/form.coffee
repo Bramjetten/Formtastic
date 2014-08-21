@@ -29,3 +29,9 @@ Template.form.events
 
       # Disable button
       $(e.target).find('button[type="submit"]').prop('disabled', true).text('Formulier verzonden').removeClass('icon-mail').addClass('icon-tick')
+
+Template.form.rendered = ->
+  if !this._rendered
+    this._rendered = true
+
+    $('#header').css("max-height", window.innerHeight * 0.9)
