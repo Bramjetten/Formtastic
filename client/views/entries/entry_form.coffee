@@ -66,3 +66,10 @@ Template.entryForm.rendered = ->
   if !this._rendered
     this._rendered = true
     $('textarea.control-label-textarea').autosize()
+    new Sortable document.getElementById('formEntries'),
+      handle: '.drag-handle'
+      onUpdate: (event) ->
+        $('#formEntries .entry-form').each (index) ->
+          Entries.update $(this).data('id'), {$set: {order: index}}, (error) ->
+            if error
+              alert(error.reason)

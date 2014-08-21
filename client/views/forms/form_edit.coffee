@@ -16,6 +16,7 @@ Template.formEdit.events
       label: 'Label'
       entryType: 'text'
       addedAt: new Date().getTime()
+      order: Entries.find({formId: this._id}).fetch().length
     }
 
     # Actually call the method to add it
@@ -32,15 +33,3 @@ Template.formEdit.events
 Template.formEdit.helpers
   entries: ->
     return Entries.find({formId: this._id}, {sort: {order: 1}})
-
-Template.formEdit.rendered = ->
-  if !this._rendered
-    this._rendered = true
-
-    new Sortable document.getElementById('formEntries'),
-      handle: '.drag-handle'
-      onUpdate: (event) ->
-        $('#formEntries .entry-form').each (index) ->
-          Entries.update $(this).data('id'), {$set: {order: index}}, (error) ->
-            if error
-              alert(error.reason)
