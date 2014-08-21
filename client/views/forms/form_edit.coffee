@@ -13,7 +13,6 @@ Template.formEdit.events
     # Create new dummy entry
     entry = {
       formId: this._id
-      label: 'Label'
       entryType: 'text'
       addedAt: new Date().getTime()
       order: Entries.find({formId: this._id}).fetch().length
