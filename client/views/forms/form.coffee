@@ -1,6 +1,6 @@
 Template.form.helpers
   entries: ->
-    return Entries.find({formId: this._id}, {sort: {addedAt: 1}})
+    return Entries.find({formId: this._id}, {sort: {order: 1}})
 
 Template.form.events
   'submit form': (e) ->
@@ -12,8 +12,6 @@ Template.form.events
       content: $(e.target).serializeArray()
       addedAt: new Date().getTime()
     }
-
-    console.log result
 
     # Compose email
     mailContent = ""

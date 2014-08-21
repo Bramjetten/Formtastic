@@ -249,6 +249,7 @@ body
   border: none
 
 .control-group
+  position: relative
   @include outer-container
   @include pad(10px default)
 
@@ -495,6 +496,19 @@ textarea.input
 
 // Entry form
 .entry-form
+  .drag-handle
+    color: #d9d9d9
+    cursor: move
+    display: inline-block
+    font-size: 18px
+    left: -24px
+    padding: 12px
+    position: absolute
+    top: 14px
+
+  &.sortable-ghost
+    opacity: .25
+
   .entry-type
     position: absolute
     right: 0

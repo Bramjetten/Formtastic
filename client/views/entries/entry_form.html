@@ -1,6 +1,7 @@
 <template name="entryForm">
-  <form class="entry-form">
+  <form class="entry-form" data-id="{{_id}}">
     <div class="control-group">
+      <div class="drag-handle icon-hamburger"></div>
       <div class="control-label">
         <textarea class="control-label-textarea label-input" placeholder="Label" name="label">{{label}}</textarea>
         <textarea class="control-label-textarea description-input" placeholder="Optionele beschrijving" name="description">{{description}}</textarea>
